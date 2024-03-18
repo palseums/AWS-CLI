@@ -1,0 +1,31 @@
+1)	The following AWS CLI command retrieves a listing of objects in examplebucket and specifies the AccountBadmin profile
+
+aws s3 ls s3://examplebucket --profile AccountBadmin
+
+2)	you can configure one set of user credentials as the default profile by changing the AWS_DEFAULT_PROFILE environment variable from the command prompt
+
+export AWS_DEFAULT_PROFILE=AccountAadmin
+
+export AWS_PROFILE=ghactivity
+
+3)	To set up additional named profiles, you can use the aws configure command with the --profile option
+aws configure --profile <profilename>
+
+4)	To use the profile you have to use some thing like below
+aws s3 ls –profile <profile_name>
+
+5)	The credentials and config file are updated when you run the command aws configure. The credentials file is located at ~/.aws/credentials on Linux or macOS, or at C:\Users\USERNAME\.aws\credentials on Windows. This file can contain the credential details for the default profile and any named profiles.
+
+6)	Some important commands
+aws configure list-profiles
+aws configure list –profile < profile_name >
+aws configure get region –profile <profile_name>
+aws configure set cli_pager “” – profile <profile_name>
+
+7)	Getting help with aws
+aws help
+aws ec2 help
+aws ec2 describe-instances help
+
+8)	aws ec2 start-instances --instance-ids i-02e15e30d3c1d5035 --profile user1
+9)	aws ec2 stop-instances --instance-ids i-02e15e30d3c1d5035 --profile user1
